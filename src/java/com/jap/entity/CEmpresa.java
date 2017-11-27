@@ -45,7 +45,7 @@ public class CEmpresa implements Serializable {
     @Column(name = "logo")
     private String logo;
     @Size(max = 1)
-    @Column(name = "estado")
+    @Column(name = "status")
     private String status;
 
     public CEmpresa() {
