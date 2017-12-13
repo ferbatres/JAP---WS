@@ -218,9 +218,9 @@ public class SRolService {
         JSONArray jarr  =  new JSONArray();
         JSONObject objsend = new JSONObject();
         String usr = obj.getString("usr");
-        String id_empresa = obj.getString("id_empresa");
+        int id_empresa = obj.getInt("id_empresa");
         try {
-            List<SRol> list = srolrepository.roleDeUsuario(usr,Integer.parseInt(id_empresa));
+            List<SRol> list = srolrepository.roleDeUsuario(usr,(id_empresa));
             jarr = new JSONArray(list);          
             objsend.put("dato", jarr);
             httpstatus = Response.Status.OK;
@@ -255,9 +255,9 @@ public class SRolService {
         JSONArray jarr  =  new JSONArray();
         JSONObject objsend = new JSONObject();
         String usr = obj.getString("usr");
-        String id_empresa = obj.getString("id_empresa");
+        int id_empresa = obj.getInt("id_empresa");
         try {
-            List<SRol> list = srolrepository.rolesNoUsuario(usr,Integer.parseInt(id_empresa));
+            List<SRol> list = srolrepository.rolesNoUsuario(usr,(id_empresa));
             jarr = new JSONArray(list);          
             objsend.put("dato", jarr);
             httpstatus = Response.Status.OK;
